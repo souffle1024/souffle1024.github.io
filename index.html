@@ -1,97 +1,127 @@
 <!DOCTYPE html>
-<html class="img-no-display"><head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <!--标题-->
-    <title>小Q的云</title>
-    <!--小图标-->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小 Q 的云</title>
     <link rel="shortcut icon" href="images/2bigTag.ico" type="image/x-icon" />
-    <!-- 引入样式 -->
-    <link rel="stylesheet" href="index.css">
-    <style type="text/css">
-        body {background: #363f48;color: white;font: normal 12px 'Open Sans', sans-serif;margin-top: 20px;}
-        ul.countdown {list-style: none;margin: 75px 0;padding: 0;display: block;text-align: center;}
-        ul.countdown li {display: inline-block;}
-        ul.countdown li span {font-size: 80px;font-weight: 300;line-height: 80px;}
-        ul.countdown li.seperator {font-size: 60px;line-height: 70px;vertical-align: top;}
-        ul.countdown li p {color: #a7abb1;font-size: 14px;}
-        ul.countdown a {color: #76949F;text-decoration: none;}
-        ul.countdown a:hover {text-decoration: underline;}
-        ul.countdown .source {width: 405px;margin: 0 auto;background: #4f5861;color: #a7abb1;font-weight: bold;display: block;white-space: pre;border-radius: 3px;}
-        ul.countdown .btn {background: #f56c4c;margin: 40px auto;padding: 12px;display: block;width: 100px;color: white;text-align: center;text-transform: uppercase;font-weight: bold;text-decoration: none;border-radius: 2px;}
-        ul.countdown .btn:hover {text-decoration: none;opacity: .7;}
-        li.title {font-size: 30px;line-height: 70px;vertical-align: top;}
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+        .container {
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+        .nav-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .nav-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: rgba(255,255,255,0.15);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+        .credentials {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        .credentials p { margin: 8px 0; }
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .countdown-item {
+            text-align: center;
+        }
+        .countdown-item span {
+            display: block;
+            font-size: 36px;
+            font-weight: 300;
+        }
+        .countdown-item p {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+        .countdown-sep {
+            font-size: 24px;
+            align-self: center;
+            opacity: 0.6;
+        }
+        .countdown-title {
+            margin-top: 20px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
     </style>
-    <!-- 引入组件库 -->
-<!--    <script src="https://unpkg.com/element-ui/lib/index.js"></script>-->
-    <title></title>
 </head>
 <body>
-
-<!--头部-->
-<div style="width:405px; list-style-type:none">
-	    <li class="title">欢迎来到Souffle的云</el-header>
-
-</div>
-
-<!--<meta http-equiv="refresh" content="5;url=https://www.soufflecloud.top/wordpress/">-->
-<el-container>
-    <br>
-    <div style="align:center">
-        <el-main >
-    	<!--博客-->
-        <button type="button" style="font-size:40px;"  class="el-button el-button--primary"  onclick="window.location.href = '#'">
-            <span>博客</span>
-        </button>
-        <!--云-->
-        <button type="button" style="font-size:40px;"  class="el-button el-button--primary"  onclick="window.location.href = 'https://www.souffle.cc:5001'">
-            <span>SouffleCloud</span>
-        </button>
-        <!--在线书籍-->
-        <button type="button" style="font-size:40px;"  class="el-button el-button--primary"  onclick="window.location.href = 'https://www.souffle.cc:8083'">
-            <span>书籍管理</span>
-        </button>
-        <!--在线影视-->
-        <button type="button" style="font-size:40px;"  class="el-button el-button--primary"  onclick="window.location.href = '#'">
-            <span>在线影视</span>
-        </button>
-        <br>
-        <span>访客用户名:abc</span>
-        <br>
-        <span>访客密码:123456</span>
-
-    </el-main>
+    <div class="container">
+        <h1>欢迎来到 Souffle 的云</h1>
+        
+        <div class="nav-buttons">
+            <a href="#" class="nav-btn">博客</a>
+            <a href="https://www.souffle.cc:5001" class="nav-btn">SouffleCloud</a>
+            <a href="https://www.souffle.cc:8083" class="nav-btn">书籍管理</a>
+            <a href="#" class="nav-btn">在线影视</a>
+        </div>
+        
+        <div class="credentials">
+            <p>访客用户名：abc</p>
+            <p>访客密码：123456</p>
+        </div>
+        
+        <ul class="countdown" id="countdown">
+            <li class="countdown-item"><span class="days">00</span><p>天</p></li>
+            <li class="countdown-sep">:</li>
+            <li class="countdown-item"><span class="hours">00</span><p>时</p></li>
+            <li class="countdown-sep">:</li>
+            <li class="countdown-item"><span class="minutes">00</span><p>分</p></li>
+            <li class="countdown-sep">:</li>
+            <li class="countdown-item"><span class="seconds">00</span><p>秒</p></li>
+        </ul>
+        <p class="countdown-title">距离 2023 年 2 月 3 日</p>
     </div>
 
-</el-container>
-
-    <!-- 代码部分begin -->
-    <ul class="countdown">
-        <li> <span class="days">00</span>
-            <p class="days_ref">days</p>
-        </li>
-        <li class="seperator">天</li>
-        <li> <span class="hours">00</span>
-            <p class="hours_ref">hours</p>
-        </li>
-        <li class="seperator">时</li>
-        <li> <span class="minutes">00</span>
-            <p class="minutes_ref">minutes</p>
-        </li>
-        <li class="seperator">分</li>
-        <li> <span class="seconds">00</span>
-            <p class="seconds_ref">seconds</p>
-        </li>
-        <li class="seperator">秒</li>
-    </ul>
-
-    <ul class="countdown">
-    <li class="seperator">距离2023年2月3日</li>
-    </ul>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.downCount.js"></script>
-    <script class="source">
+    <script>
         $('.countdown').downCount({
             date: '2/3/2023 00:00:00',
             offset: +10
@@ -99,9 +129,5 @@
             alert('倒计时结束!');
         });
     </script>
-    <!-- 代码部分end -->
-
-
 </body>
-
 </html>
