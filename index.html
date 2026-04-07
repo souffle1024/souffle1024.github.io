@@ -65,7 +65,7 @@
         .cyber-container {
             position: relative;
             z-index: 1;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 40px 20px;
         }
@@ -301,6 +301,252 @@
                 opacity: 0;
             }
         }
+        
+        /* 功能面板样式 */
+        .feature-panel {
+            background: rgba(0, 255, 255, 0.05);
+            border: 2px solid #00ffff;
+            padding: 30px;
+            margin: 40px 0;
+            clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+            position: relative;
+        }
+        
+        .feature-panel h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 28px;
+            color: #ff0080;
+            text-shadow: 0 0 10px #ff0080;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+        }
+        
+        /* 倒计时输入样式 */
+        .countdown-input-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .cyber-input {
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid #00ffff;
+            color: #00ffff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 18px;
+            padding: 12px 20px;
+            outline: none;
+            transition: all 0.3s ease;
+            clip-path: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px);
+        }
+        
+        .cyber-input:focus {
+            background: rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 15px #00ffff;
+        }
+        
+        .cyber-input::placeholder {
+            color: rgba(0, 255, 255, 0.5);
+        }
+        
+        .cyber-btn-small {
+            background: rgba(255, 0, 128, 0.1);
+            border: 2px solid #ff0080;
+            color: #ff0080;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 16px;
+            padding: 12px 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            clip-path: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px);
+        }
+        
+        .cyber-btn-small:hover {
+            background: rgba(255, 0, 128, 0.3);
+            box-shadow: 0 0 15px #ff0080;
+        }
+        
+        /* 计算器样式 */
+        .calculator {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .calc-display {
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid #00ffff;
+            color: #00ffff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 32px;
+            padding: 20px;
+            text-align: right;
+            margin-bottom: 15px;
+            min-height: 70px;
+            word-break: break-all;
+            text-shadow: 0 0 10px #00ffff;
+        }
+        
+        .calc-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        
+        .calc-btn {
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid #00ffff;
+            color: #00ffff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 20px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            clip-path: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px);
+        }
+        
+        .calc-btn:hover {
+            background: rgba(0, 255, 255, 0.3);
+            box-shadow: 0 0 15px #00ffff;
+        }
+        
+        .calc-btn.operator {
+            background: rgba(255, 0, 128, 0.1);
+            border-color: #ff0080;
+            color: #ff0080;
+        }
+        
+        .calc-btn.operator:hover {
+            background: rgba(255, 0, 128, 0.3);
+            box-shadow: 0 0 15px #ff0080;
+        }
+        
+        .calc-btn.equals {
+            background: rgba(0, 255, 136, 0.1);
+            border-color: #00ff88;
+            color: #00ff88;
+            grid-column: span 2;
+        }
+        
+        .calc-btn.equals:hover {
+            background: rgba(0, 255, 136, 0.3);
+            box-shadow: 0 0 15px #00ff88;
+        }
+        
+        .calc-btn.clear {
+            background: rgba(255, 100, 100, 0.1);
+            border-color: #ff6464;
+            color: #ff6464;
+        }
+        
+        .calc-btn.clear:hover {
+            background: rgba(255, 100, 100, 0.3);
+            box-shadow: 0 0 15px #ff6464;
+        }
+        
+        /* 画板样式 */
+        .drawing-board {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .canvas-container {
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid #00ffff;
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+            overflow: hidden;
+        }
+        
+        #drawCanvas {
+            display: block;
+            background: #0a0e1a;
+            cursor: crosshair;
+        }
+        
+        .draw-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+            align-items: center;
+        }
+        
+        .color-picker {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #00ffff;
+            cursor: pointer;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+        
+        .brush-size {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .brush-size label {
+            font-family: 'Orbitron', sans-serif;
+            color: #00ffff;
+            font-size: 14px;
+        }
+        
+        .brush-slider {
+            -webkit-appearance: none;
+            width: 150px;
+            height: 8px;
+            background: rgba(0, 255, 255, 0.3);
+            outline: none;
+            clip-path: polygon(5px 0, 100% 0, 100% 100%, 0 100%, 0 5px);
+        }
+        
+        .brush-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #00ffff;
+            cursor: pointer;
+            box-shadow: 0 0 10px #00ffff;
+        }
+        
+        .section-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        
+        .section-tab {
+            background: rgba(0, 255, 255, 0.05);
+            border: 2px solid #00ffff;
+            color: #00ffff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 18px;
+            padding: 15px 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+        }
+        
+        .section-tab.active {
+            background: rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 20px #00ffff;
+        }
+        
+        .section-tab:hover {
+            background: rgba(0, 255, 255, 0.15);
+        }
+        
+        .feature-section {
+            display: none;
+        }
+        
+        .feature-section.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -350,43 +596,397 @@
         <span>访客密码：123456</span>
     </div>
 
+    <!-- 功能标签页 -->
+    <div class="section-tabs">
+        <div class="section-tab active" data-section="countdown-section">倒计时</div>
+        <div class="section-tab" data-section="calculator-section">计算器</div>
+        <div class="section-tab" data-section="drawing-section">画板</div>
+    </div>
+
+    <!-- 倒计时功能区 -->
+    <div id="countdown-section" class="feature-section active">
+        <div class="feature-panel">
+            <h2>⏱️ 自定义倒计时</h2>
+            <div class="countdown-input-group">
+                <input type="datetime-local" id="targetDateInput" class="cyber-input" placeholder="选择目标日期">
+                <button id="startCountdownBtn" class="cyber-btn-small">启动倒计时</button>
+                <button id="clearCountdownBtn" class="cyber-btn-small">清除</button>
+            </div>
+        </div>
+        
+        <!-- 倒计时显示 -->
+        <ul class="countdown">
+            <li> <span class="days">00</span>
+                <p class="days_ref">DAYS</p>
+            </li>
+            <li class="seperator">天</li>
+            <li> <span class="hours">00</span>
+                <p class="hours_ref">HOURS</p>
+            </li>
+            <li class="seperator">时</li>
+            <li> <span class="minutes">00</span>
+                <p class="minutes_ref">MINUTES</p>
+            </li>
+            <li class="seperator">分</li>
+            <li> <span class="seconds">00</span>
+                <p class="seconds_ref">SECONDS</p>
+            </li>
+            <li class="seperator">秒</li>
+        </ul>
+        <ul class="countdown">
+            <li class="countdown-title">距离目标日期</li>
+        </ul>
+    </div>
+
+    <!-- 计算器功能区 -->
+    <div id="calculator-section" class="feature-section">
+        <div class="feature-panel">
+            <h2>🔢 赛博计算器</h2>
+            <div class="calculator">
+                <div class="calc-display" id="calcDisplay">0</div>
+                <div class="calc-buttons">
+                    <button class="calc-btn clear" onclick="clearCalc()">C</button>
+                    <button class="calc-btn operator" onclick="appendCalc('(')">(</button>
+                    <button class="calc-btn operator" onclick="appendCalc(')')">)</button>
+                    <button class="calc-btn operator" onclick="appendCalc('/')">÷</button>
+                    
+                    <button class="calc-btn" onclick="appendCalc('7')">7</button>
+                    <button class="calc-btn" onclick="appendCalc('8')">8</button>
+                    <button class="calc-btn" onclick="appendCalc('9')">9</button>
+                    <button class="calc-btn operator" onclick="appendCalc('*')">×</button>
+                    
+                    <button class="calc-btn" onclick="appendCalc('4')">4</button>
+                    <button class="calc-btn" onclick="appendCalc('5')">5</button>
+                    <button class="calc-btn" onclick="appendCalc('6')">6</button>
+                    <button class="calc-btn operator" onclick="appendCalc('-')">-</button>
+                    
+                    <button class="calc-btn" onclick="appendCalc('1')">1</button>
+                    <button class="calc-btn" onclick="appendCalc('2')">2</button>
+                    <button class="calc-btn" onclick="appendCalc('3')">3</button>
+                    <button class="calc-btn operator" onclick="appendCalc('+')">+</button>
+                    
+                    <button class="calc-btn" onclick="appendCalc('0')">0</button>
+                    <button class="calc-btn" onclick="appendCalc('.')">.</button>
+                    <button class="calc-btn equals" onclick="calculateResult()">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 画板功能区 -->
+    <div id="drawing-section" class="feature-section">
+        <div class="feature-panel">
+            <h2>🎨 赛博画板</h2>
+            <div class="drawing-board">
+                <div class="canvas-container">
+                    <canvas id="drawCanvas" width="800" height="500"></canvas>
+                </div>
+                <div class="draw-controls">
+                    <input type="color" id="brushColor" class="color-picker" value="#00ffff">
+                    <div class="brush-size">
+                        <label>画笔大小:</label>
+                        <input type="range" id="brushSize" class="brush-slider" min="1" max="50" value="5">
+                        <span id="brushSizeValue" style="color: #00ffff; font-family: 'Orbitron';">5</span>
+                    </div>
+                    <button class="cyber-btn-small" onclick="clearCanvas()">清空画布</button>
+                    <button class="cyber-btn-small" onclick="eraseMode()">橡皮擦</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
-    <!-- 代码部分 begin -->
-    <ul class="countdown">
-        <li> <span class="days">00</span>
-            <p class="days_ref">DAYS</p>
-        </li>
-        <li class="seperator">天</li>
-        <li> <span class="hours">00</span>
-            <p class="hours_ref">HOURS</p>
-        </li>
-        <li class="seperator">时</li>
-        <li> <span class="minutes">00</span>
-            <p class="minutes_ref">MINUTES</p>
-        </li>
-        <li class="seperator">分</li>
-        <li> <span class="seconds">00</span>
-            <p class="seconds_ref">SECONDS</p>
-        </li>
-        <li class="seperator">秒</li>
-    </ul>
-
-    <ul class="countdown">
-    <li class="countdown-title">距离目标日期</li>
-    </ul>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.downCount.js"></script>
     <script class="source">
-        $('.countdown').downCount({
-            date: '2/3/2023 00:00:00',
-            offset: +10
-        }, function () {
-            alert('倒计时结束!');
+        // 标签页切换功能
+        document.querySelectorAll('.section-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.section-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.feature-section').forEach(s => s.classList.remove('active'));
+                this.classList.add('active');
+                document.getElementById(this.dataset.section).classList.add('active');
+            });
         });
-    </script>
-    <!-- 代码部分 end -->
 
+        // ==================== 倒计时功能 ====================
+        let countdownInterval = null;
+        
+        // 设置默认时间为明天
+        const now = new Date();
+        now.setDate(now.getDate() + 1);
+        now.setHours(0, 0, 0, 0);
+        const defaultTime = now.toISOString().slice(0, 16);
+        document.getElementById('targetDateInput').value = defaultTime;
+
+        function startCustomCountdown() {
+            const inputVal = document.getElementById('targetDateInput').value;
+            if (!inputVal) {
+                alert('请选择目标日期！');
+                return;
+            }
+            
+            const targetDate = new Date(inputVal);
+            if (isNaN(targetDate.getTime())) {
+                alert('日期格式无效！');
+                return;
+            }
+
+            if (countdownInterval) {
+                clearInterval(countdownInterval);
+            }
+
+            countdownInterval = setInterval(function() {
+                const now = new Date();
+                const difference = targetDate - now;
+
+                if (difference < 0) {
+                    clearInterval(countdownInterval);
+                    $('.days').text('00');
+                    $('.hours').text('00');
+                    $('.minutes').text('00');
+                    $('.seconds').text('00');
+                    $('.days_ref').text('EXPIRED');
+                    $('.hours_ref').text('');
+                    $('.minutes_ref').text('');
+                    $('.seconds_ref').text('');
+                    alert('倒计时结束!');
+                    return;
+                }
+
+                const _second = 1000,
+                    _minute = _second * 60,
+                    _hour = _minute * 60,
+                    _day = _hour * 24;
+
+                const days = Math.floor(difference / _day);
+                const hours = Math.floor((difference % _day) / _hour);
+                const minutes = Math.floor((difference % _hour) / _minute);
+                const seconds = Math.floor((difference % _minute) / _second);
+
+                $('.days').text(days < 10 ? '0' + days : days);
+                $('.hours').text(hours < 10 ? '0' + hours : hours);
+                $('.minutes').text(minutes < 10 ? '0' + minutes : minutes);
+                $('.seconds').text(seconds < 10 ? '0' + seconds : seconds);
+                $('.days_ref').text(days === 1 ? 'DAY' : 'DAYS');
+                $('.hours_ref').text(hours === 1 ? 'HOUR' : 'HOURS');
+                $('.minutes_ref').text(minutes === 1 ? 'MINUTE' : 'MINUTES');
+                $('.seconds_ref').text(seconds === 1 ? 'SECOND' : 'SECONDS');
+            }, 1000);
+        }
+
+        function clearCountdown() {
+            if (countdownInterval) {
+                clearInterval(countdownInterval);
+                countdownInterval = null;
+            }
+            $('.days').text('00');
+            $('.hours').text('00');
+            $('.minutes').text('00');
+            $('.seconds').text('00');
+            $('.days_ref').text('DAYS');
+            $('.hours_ref').text('HOURS');
+            $('.minutes_ref').text('MINUTES');
+            $('.seconds_ref').text('SECONDS');
+        }
+
+        document.getElementById('startCountdownBtn').addEventListener('click', startCustomCountdown);
+        document.getElementById('clearCountdownBtn').addEventListener('click', clearCountdown);
+
+        // 启动默认倒计时
+        startCustomCountdown();
+
+        // ==================== 计算器功能 ====================
+        let calcExpression = '';
+        const calcDisplay = document.getElementById('calcDisplay');
+
+        function appendCalc(value) {
+            if (calcExpression === 'Error' || calcExpression === 'Infinity') {
+                calcExpression = '';
+            }
+            calcExpression += value;
+            updateCalcDisplay();
+        }
+
+        function clearCalc() {
+            calcExpression = '';
+            calcDisplay.textContent = '0';
+        }
+
+        function calculateResult() {
+            try {
+                if (calcExpression === '') return;
+                const result = eval(calcExpression);
+                calcExpression = result.toString();
+                updateCalcDisplay();
+            } catch (e) {
+                calcExpression = 'Error';
+                updateCalcDisplay();
+                setTimeout(() => {
+                    calcExpression = '';
+                    updateCalcDisplay();
+                }, 1500);
+            }
+        }
+
+        function updateCalcDisplay() {
+            if (calcExpression === '') {
+                calcDisplay.textContent = '0';
+            } else {
+                calcDisplay.textContent = calcExpression;
+            }
+        }
+
+        // 键盘支持
+        document.addEventListener('keydown', function(e) {
+            if (document.getElementById('calculator-section').classList.contains('active')) {
+                if (e.key >= '0' && e.key <= '9' || e.key === '.' || e.key === '+' || e.key === '-' || e.key === '*' || e.key === '/' || e.key === '(' || e.key === ')') {
+                    appendCalc(e.key);
+                } else if (e.key === 'Enter' || e.key === '=') {
+                    calculateResult();
+                } else if (e.key === 'Backspace') {
+                    calcExpression = calcExpression.slice(0, -1);
+                    updateCalcDisplay();
+                } else if (e.key === 'Escape' || e.key === 'c' || e.key === 'C') {
+                    clearCalc();
+                }
+            }
+        });
+
+        // ==================== 画板功能 ====================
+        const canvas = document.getElementById('drawCanvas');
+        const ctx = canvas.getContext('2d');
+        let isDrawing = false;
+        let lastX = 0;
+        let lastY = 0;
+        let isEraser = false;
+
+        // 设置初始画笔样式
+        ctx.strokeStyle = '#00ffff';
+        ctx.lineWidth = 5;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = '#00ffff';
+
+        // 调整画布大小
+        function resizeCanvas() {
+            const container = canvas.parentElement;
+            const rect = container.getBoundingClientRect();
+            canvas.width = rect.width;
+            canvas.height = 500;
+        }
+        resizeCanvas();
+
+        // 画笔颜色
+        document.getElementById('brushColor').addEventListener('input', function(e) {
+            ctx.strokeStyle = e.target.value;
+            ctx.shadowColor = e.target.value;
+            isEraser = false;
+        });
+
+        // 画笔大小
+        document.getElementById('brushSize').addEventListener('input', function(e) {
+            ctx.lineWidth = e.target.value;
+            document.getElementById('brushSizeValue').textContent = e.target.value;
+        });
+
+        function getMousePos(e) {
+            const rect = canvas.getBoundingClientRect();
+            return {
+                x: e.clientX - rect.left,
+                y: e.clientY - rect.top
+            };
+        }
+
+        function startDrawing(e) {
+            isDrawing = true;
+            const pos = getMousePos(e);
+            lastX = pos.x;
+            lastY = pos.y;
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+            e.preventDefault();
+            
+            const pos = getMousePos(e);
+            
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(pos.x, pos.y);
+            
+            if (isEraser) {
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.shadowBlur = 0;
+            } else {
+                ctx.globalCompositeOperation = 'source-over';
+            }
+            
+            ctx.stroke();
+            
+            lastX = pos.x;
+            lastY = pos.y;
+        }
+
+        function stopDrawing() {
+            isDrawing = false;
+            ctx.beginPath();
+        }
+
+        // 鼠标事件
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseout', stopDrawing);
+
+        // 触摸事件
+        canvas.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            const touch = e.touches[0];
+            const mouseEvent = new MouseEvent('mousedown', {
+                clientX: touch.clientX,
+                clientY: touch.clientY
+            });
+            canvas.dispatchEvent(mouseEvent);
+        });
+
+        canvas.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+            const touch = e.touches[0];
+            const mouseEvent = new MouseEvent('mousemove', {
+                clientX: touch.clientX,
+                clientY: touch.clientY
+            });
+            canvas.dispatchEvent(mouseEvent);
+        });
+
+        canvas.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            const mouseEvent = new MouseEvent('mouseup', {});
+            canvas.dispatchEvent(mouseEvent);
+        });
+
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.globalCompositeOperation = 'source-over';
+            ctx.shadowBlur = 10;
+            isEraser = false;
+        }
+
+        function eraseMode() {
+            isEraser = !isEraser;
+            if (isEraser) {
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.shadowBlur = 0;
+            } else {
+                ctx.globalCompositeOperation = 'source-over';
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = document.getElementById('brushColor').value;
+            }
+        }
+    </script>
 
 </body>
 
