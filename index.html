@@ -547,6 +547,541 @@
         .feature-section.active {
             display: block;
         }
+        
+        /* ==================== 风格切换按钮 ==================== */
+        .style-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .style-btn {
+            padding: 10px 20px;
+            border: 2px solid #00ffff;
+            background: rgba(0, 255, 255, 0.1);
+            color: #00ffff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            clip-path: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px);
+        }
+        
+        .style-btn:hover {
+            background: rgba(0, 255, 255, 0.3);
+            box-shadow: 0 0 15px #00ffff;
+        }
+        
+        .style-btn.active {
+            background: rgba(0, 255, 255, 0.3);
+            box-shadow: 0 0 15px #00ffff;
+        }
+        
+        /* ==================== 简约风格 ==================== */
+        body.minimal-style {
+            background: #f5f5f5;
+            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body.minimal-style::before,
+        body.minimal-style::after {
+            display: none;
+        }
+        
+        body.minimal-style .cyber-corner {
+            display: none;
+        }
+        
+        body.minimal-style .glow-particle {
+            display: none;
+        }
+        
+        body.minimal-style .cyber-title {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #333;
+            text-shadow: none;
+            animation: none;
+            letter-spacing: normal;
+        }
+        
+        body.minimal-style .cyber-button {
+            background: #fff;
+            border: 1px solid #ddd;
+            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 20px 30px;
+            clip-path: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-transform: none;
+            letter-spacing: normal;
+        }
+        
+        body.minimal-style .cyber-button:hover {
+            background: #f0f0f0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+            text-shadow: none;
+        }
+        
+        body.minimal-style .visitor-info {
+            background: #fff;
+            border: 1px solid #eee;
+            clip-path: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        body.minimal-style .visitor-info span {
+            color: #666;
+            text-shadow: none;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 14px;
+            letter-spacing: normal;
+        }
+        
+        body.minimal-style .countdown {
+            background: #fff;
+            border: 1px solid #eee;
+            clip-path: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        body.minimal-style .countdown li span {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace;
+            font-size: 48px;
+            color: #333;
+            text-shadow: none;
+        }
+        
+        body.minimal-style .countdown li.seperator {
+            color: #999;
+            text-shadow: none;
+        }
+        
+        body.minimal-style .countdown li p {
+            color: #666;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            text-shadow: none;
+            font-size: 11px;
+        }
+        
+        body.minimal-style .countdown-title {
+            color: #666;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            text-shadow: none;
+            letter-spacing: normal;
+        }
+        
+        body.minimal-style .feature-panel {
+            background: #fff;
+            border: 1px solid #eee;
+            clip-path: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        body.minimal-style .feature-panel h2 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #333;
+            text-shadow: none;
+            font-size: 22px;
+            letter-spacing: normal;
+        }
+        
+        body.minimal-style .cyber-input {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace;
+            clip-path: none;
+        }
+        
+        body.minimal-style .cyber-input:focus {
+            background: #fff;
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+        }
+        
+        body.minimal-style .cyber-btn-small {
+            background: #007bff;
+            border: none;
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 14px;
+            padding: 10px 20px;
+            clip-path: none;
+            border-radius: 4px;
+        }
+        
+        body.minimal-style .cyber-btn-small:hover {
+            background: #0056b3;
+            box-shadow: none;
+        }
+        
+        body.minimal-style .calc-display {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace;
+            text-shadow: none;
+        }
+        
+        body.minimal-style .calc-btn {
+            background: #fff;
+            border: 1px solid #ddd;
+            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            clip-path: none;
+            border-radius: 4px;
+        }
+        
+        body.minimal-style .calc-btn:hover {
+            background: #f0f0f0;
+            box-shadow: none;
+        }
+        
+        body.minimal-style .calc-btn.operator {
+            background: #f8f9fa;
+            border-color: #ddd;
+            color: #007bff;
+        }
+        
+        body.minimal-style .calc-btn.equals {
+            background: #007bff;
+            border-color: #007bff;
+            color: #fff;
+        }
+        
+        body.minimal-style .calc-btn.equals:hover {
+            background: #0056b3;
+        }
+        
+        body.minimal-style .calc-btn.clear {
+            background: #dc3545;
+            border-color: #dc3545;
+            color: #fff;
+        }
+        
+        body.minimal-style .canvas-container {
+            background: #fff;
+            border: 1px solid #ddd;
+            clip-path: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        body.minimal-style #drawCanvas {
+            background: #fafafa;
+        }
+        
+        body.minimal-style .color-picker {
+            border: 1px solid #ddd;
+            clip-path: none;
+            border-radius: 4px;
+        }
+        
+        body.minimal-style .brush-slider {
+            background: #e0e0e0;
+            clip-path: none;
+            border-radius: 4px;
+        }
+        
+        body.minimal-style .brush-slider::-webkit-slider-thumb {
+            background: #007bff;
+            box-shadow: none;
+            border-radius: 50%;
+        }
+        
+        body.minimal-style .section-tab {
+            background: #fff;
+            border: 1px solid #ddd;
+            color: #666;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 14px;
+            padding: 12px 24px;
+            clip-path: none;
+            border-radius: 4px;
+        }
+        
+        body.minimal-style .section-tab.active {
+            background: #007bff;
+            color: #fff;
+            border-color: #007bff;
+            box-shadow: none;
+        }
+        
+        body.minimal-style .section-tab:hover {
+            background: #f0f0f0;
+        }
+        
+        body.minimal-style .style-btn {
+            border: 1px solid #ddd;
+            background: #fff;
+            color: #666;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            clip-path: none;
+            border-radius: 4px;
+        }
+        
+        body.minimal-style .style-btn:hover,
+        body.minimal-style .style-btn.active {
+            background: #007bff;
+            color: #fff;
+            border-color: #007bff;
+            box-shadow: none;
+        }
+        
+        /* ==================== 程序员风格 ==================== */
+        body.programmer-style {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+        }
+        
+        body.programmer-style::before {
+            background-image: 
+                linear-gradient(rgba(100, 100, 100, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(100, 100, 100, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        body.programmer-style .cyber-corner {
+            border-color: #569cd6;
+        }
+        
+        body.programmer-style .glow-particle {
+            background: #4ec9b0;
+            box-shadow: 0 0 5px #4ec9b0;
+        }
+        
+        body.programmer-style .cyber-title {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 32px;
+            color: #569cd6;
+            text-shadow: none;
+            animation: none;
+            letter-spacing: normal;
+        }
+        
+        body.programmer-style .cyber-button {
+            background: #2d2d2d;
+            border: 1px solid #569cd6;
+            color: #d4d4d4;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 16px;
+            padding: 18px 25px;
+            clip-path: none;
+            text-transform: none;
+            letter-spacing: normal;
+        }
+        
+        body.programmer-style .cyber-button:hover {
+            background: #3e3e3e;
+            box-shadow: 0 0 10px rgba(86, 156, 214, 0.3);
+            text-shadow: none;
+        }
+        
+        body.programmer-style .visitor-info {
+            background: #252526;
+            border: 1px solid #3c3c3c;
+            clip-path: none;
+        }
+        
+        body.programmer-style .visitor-info span {
+            color: #ce9178;
+            text-shadow: none;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 13px;
+            letter-spacing: normal;
+        }
+        
+        body.programmer-style .visitor-info span:first-child {
+            color: #6a9955;
+            text-shadow: none;
+        }
+        
+        body.programmer-style .countdown {
+            background: #252526;
+            border: 1px solid #3c3c3c;
+            clip-path: none;
+        }
+        
+        body.programmer-style .countdown li span {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 42px;
+            color: #b5cea8;
+            text-shadow: none;
+        }
+        
+        body.programmer-style .countdown li.seperator {
+            color: #569cd6;
+            text-shadow: none;
+        }
+        
+        body.programmer-style .countdown li p {
+            color: #808080;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            text-shadow: none;
+            font-size: 10px;
+        }
+        
+        body.programmer-style .countdown-title {
+            color: #569cd6;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            text-shadow: none;
+            letter-spacing: normal;
+        }
+        
+        body.programmer-style .feature-panel {
+            background: #252526;
+            border: 1px solid #3c3c3c;
+            clip-path: none;
+        }
+        
+        body.programmer-style .feature-panel h2 {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            color: #569cd6;
+            text-shadow: none;
+            font-size: 20px;
+            letter-spacing: normal;
+        }
+        
+        body.programmer-style .cyber-input {
+            background: #1e1e1e;
+            border: 1px solid #3c3c3c;
+            color: #d4d4d4;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            clip-path: none;
+        }
+        
+        body.programmer-style .cyber-input:focus {
+            border-color: #569cd6;
+            box-shadow: 0 0 5px rgba(86, 156, 214, 0.3);
+        }
+        
+        body.programmer-style .cyber-btn-small {
+            background: #0e639c;
+            border: none;
+            color: #fff;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 13px;
+            padding: 10px 18px;
+            clip-path: none;
+            border-radius: 2px;
+        }
+        
+        body.programmer-style .cyber-btn-small:hover {
+            background: #1177bb;
+            box-shadow: none;
+        }
+        
+        body.programmer-style .calc-display {
+            background: #1e1e1e;
+            border: 1px solid #3c3c3c;
+            color: #b5cea8;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            text-shadow: none;
+        }
+        
+        body.programmer-style .calc-btn {
+            background: #2d2d2d;
+            border: 1px solid #3c3c3c;
+            color: #d4d4d4;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            clip-path: none;
+            border-radius: 2px;
+        }
+        
+        body.programmer-style .calc-btn:hover {
+            background: #3e3e3e;
+            box-shadow: none;
+        }
+        
+        body.programmer-style .calc-btn.operator {
+            color: #569cd6;
+            border-color: #569cd6;
+        }
+        
+        body.programmer-style .calc-btn.equals {
+            background: #0e639c;
+            border-color: #0e639c;
+            color: #fff;
+        }
+        
+        body.programmer-style .calc-btn.clear {
+            background: #f44747;
+            border-color: #f44747;
+            color: #fff;
+        }
+        
+        body.programmer-style .canvas-container {
+            background: #1e1e1e;
+            border: 1px solid #3c3c3c;
+            clip-path: none;
+        }
+        
+        body.programmer-style #drawCanvas {
+            background: #252526;
+        }
+        
+        body.programmer-style .color-picker {
+            border: 1px solid #3c3c3c;
+            clip-path: none;
+        }
+        
+        body.programmer-style .brush-slider {
+            background: #3c3c3c;
+            clip-path: none;
+        }
+        
+        body.programmer-style .brush-slider::-webkit-slider-thumb {
+            background: #569cd6;
+            box-shadow: none;
+        }
+        
+        body.programmer-style .section-tab {
+            background: #2d2d2d;
+            border: 1px solid #3c3c3c;
+            color: #808080;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            padding: 12px 24px;
+            clip-path: none;
+            border-radius: 2px;
+        }
+        
+        body.programmer-style .section-tab.active {
+            background: #0e639c;
+            color: #fff;
+            border-color: #0e639c;
+            box-shadow: none;
+        }
+        
+        body.programmer-style .section-tab:hover {
+            background: #3e3e3e;
+        }
+        
+        body.programmer-style .style-btn {
+            border: 1px solid #3c3c3c;
+            background: #2d2d2d;
+            color: #808080;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            clip-path: none;
+            border-radius: 2px;
+        }
+        
+        body.programmer-style .style-btn:hover,
+        body.programmer-style .style-btn.active {
+            background: #0e639c;
+            color: #fff;
+            border-color: #0e639c;
+            box-shadow: none;
+        }
     </style>
 </head>
 <body>
@@ -568,6 +1103,13 @@
 <div class="glow-particle" style="left: 80%; animation-delay: 14s;"></div>
 
 <div class="cyber-container">
+    <!-- 风格切换按钮 -->
+    <div class="style-switcher">
+        <button class="style-btn active" onclick="setStyle('cyberpunk')">赛博朋克</button>
+        <button class="style-btn" onclick="setStyle('minimal')">简约</button>
+        <button class="style-btn" onclick="setStyle('programmer')">程序员</button>
+    </div>
+    
     <!--头部-->
     <h1 class="cyber-title">欢迎来到 SOUFFLE 的云</h1>
 
@@ -986,6 +1528,46 @@
                 ctx.shadowColor = document.getElementById('brushColor').value;
             }
         }
+        
+        // ==================== 风格切换功能 ====================
+        function setStyle(styleName) {
+            // 移除所有风格类
+            document.body.classList.remove('minimal-style', 'programmer-style');
+            
+            // 更新按钮状态
+            document.querySelectorAll('.style-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // 应用新风格
+            if (styleName === 'cyberpunk') {
+                // 赛博朋克风格是默认风格，不需要添加额外的类
+                event.target.classList.add('active');
+            } else if (styleName === 'minimal') {
+                document.body.classList.add('minimal-style');
+                event.target.classList.add('active');
+            } else if (styleName === 'programmer') {
+                document.body.classList.add('programmer-style');
+                event.target.classList.add('active');
+            }
+            
+            // 保存到 localStorage
+            localStorage.setItem('preferredStyle', styleName);
+        }
+        
+        // 页面加载时恢复用户选择的风格
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedStyle = localStorage.getItem('preferredStyle') || 'cyberpunk';
+            const styleBtns = document.querySelectorAll('.style-btn');
+            styleBtns.forEach(btn => {
+                if (btn.textContent.includes(
+                    savedStyle === 'cyberpunk' ? '赛博朋克' : 
+                    savedStyle === 'minimal' ? '简约' : '程序员'
+                )) {
+                    btn.click();
+                }
+            });
+        });
     </script>
 
 </body>
