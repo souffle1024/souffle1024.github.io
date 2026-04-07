@@ -4,90 +4,376 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!--标题-->
-    <title>小Q的云</title>
+    <title>小 Q 的云 - CYBERPUNK EDITION</title>
     <!--小图标-->
     <link rel="shortcut icon" href="images/2bigTag.ico" type="image/x-icon" />
     <!-- 引入样式 -->
     <link rel="stylesheet" href="index.css">
     <style type="text/css">
-        body {background: #363f48;color: white;font: normal 12px 'Open Sans', sans-serif;margin-top: 20px;}
-        ul.countdown {list-style: none;margin: 75px 0;padding: 0;display: block;text-align: center;}
-        ul.countdown li {display: inline-block;}
-        ul.countdown li span {font-size: 80px;font-weight: 300;line-height: 80px;}
-        ul.countdown li.seperator {font-size: 60px;line-height: 70px;vertical-align: top;}
-        ul.countdown li p {color: #a7abb1;font-size: 14px;}
-        ul.countdown a {color: #76949F;text-decoration: none;}
-        ul.countdown a:hover {text-decoration: underline;}
-        ul.countdown .source {width: 405px;margin: 0 auto;background: #4f5861;color: #a7abb1;font-weight: bold;display: block;white-space: pre;border-radius: 3px;}
-        ul.countdown .btn {background: #f56c4c;margin: 40px auto;padding: 12px;display: block;width: 100px;color: white;text-align: center;text-transform: uppercase;font-weight: bold;text-decoration: none;border-radius: 2px;}
-        ul.countdown .btn:hover {text-decoration: none;opacity: .7;}
-        li.title {font-size: 30px;line-height: 70px;vertical-align: top;}
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a0f2e 50%, #0d1b2a 100%);
+            color: #00ffff;
+            font: normal 12px 'Rajdhani', 'Open Sans', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* 网格背景 */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        /* 扫描线效果 */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        .cyber-container {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* 标题样式 */
+        .cyber-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 48px;
+            font-weight: 900;
+            text-align: center;
+            color: #00ffff;
+            text-shadow: 
+                0 0 5px #00ffff,
+                0 0 10px #00ffff,
+                0 0 20px #00ffff,
+                0 0 40px #0088ff,
+                0 0 80px #0088ff;
+            animation: flicker 2s infinite;
+            margin-bottom: 40px;
+            letter-spacing: 8px;
+        }
+        
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                opacity: 1;
+            }
+            20%, 24%, 55% {
+                opacity: 0.5;
+            }
+        }
+        
+        /* 按钮容器 */
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        /* 赛博按钮 */
+        .cyber-button {
+            position: relative;
+            background: rgba(0, 255, 255, 0.05);
+            border: 2px solid #00ffff;
+            color: #00ffff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            padding: 25px 30px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            transition: all 0.3s ease;
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+        
+        .cyber-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .cyber-button:hover {
+            background: rgba(0, 255, 255, 0.15);
+            box-shadow: 
+                0 0 10px #00ffff,
+                0 0 20px #00ffff,
+                inset 0 0 20px rgba(0, 255, 255, 0.2);
+            text-shadow: 0 0 10px #00ffff;
+            transform: translateY(-3px);
+        }
+        
+        .cyber-button:hover::before {
+            left: 100%;
+        }
+        
+        .cyber-button:active {
+            transform: translateY(0);
+        }
+        
+        /* 访客信息 */
+        .visitor-info {
+            background: rgba(255, 0, 128, 0.05);
+            border: 1px solid #ff0080;
+            padding: 20px 30px;
+            margin: 40px 0;
+            text-align: center;
+            clip-path: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px);
+        }
+        
+        .visitor-info span {
+            display: block;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 18px;
+            margin: 10px 0;
+            color: #ff0080;
+            text-shadow: 0 0 5px #ff0080;
+            letter-spacing: 2px;
+        }
+        
+        .visitor-info span:first-child {
+            color: #00ff88;
+            text-shadow: 0 0 5px #00ff88;
+        }
+        
+        /* 倒计时样式 */
+        ul.countdown {
+            list-style: none;
+            margin: 60px 0 30px;
+            padding: 30px;
+            display: block;
+            text-align: center;
+            background: rgba(0, 255, 255, 0.03);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+            position: relative;
+        }
+        
+        ul.countdown li {
+            display: inline-block;
+            margin: 0 5px;
+        }
+        
+        ul.countdown li span {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 60px;
+            font-weight: 700;
+            line-height: 70px;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #0088ff;
+            display: block;
+        }
+        
+        ul.countdown li.seperator {
+            font-size: 50px;
+            line-height: 60px;
+            vertical-align: top;
+            color: #ff0080;
+            text-shadow: 0 0 10px #ff0080;
+        }
+        
+        ul.countdown li p {
+            color: #00ff88;
+            font-size: 12px;
+            font-family: 'Rajdhani', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 5px;
+            text-shadow: 0 0 5px #00ff88;
+        }
+        
+        .countdown-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 20px;
+            color: #ff0080;
+            text-shadow: 0 0 10px #ff0080;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+        
+        /* 装饰元素 */
+        .cyber-corner {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            border: 2px solid #00ffff;
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        .cyber-corner.top-left {
+            top: 20px;
+            left: 20px;
+            border-right: none;
+            border-bottom: none;
+        }
+        
+        .cyber-corner.top-right {
+            top: 20px;
+            right: 20px;
+            border-left: none;
+            border-bottom: none;
+        }
+        
+        .cyber-corner.bottom-left {
+            bottom: 20px;
+            left: 20px;
+            border-right: none;
+            border-top: none;
+        }
+        
+        .cyber-corner.bottom-right {
+            bottom: 20px;
+            right: 20px;
+            border-left: none;
+            border-top: none;
+        }
+        
+        /* 发光粒子 */
+        .glow-particle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: #00ffff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+            animation: float 15s infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
     </style>
-    <!-- 引入组件库 -->
-<!--    <script src="https://unpkg.com/element-ui/lib/index.js"></script>-->
-    <title></title>
 </head>
 <body>
 
-<!--头部-->
-<div style="width:405px; list-style-type:none">
-	    <li class="title">欢迎来到Souffle的云</el-header>
+<!-- 装饰角标 -->
+<div class="cyber-corner top-left"></div>
+<div class="cyber-corner top-right"></div>
+<div class="cyber-corner bottom-left"></div>
+<div class="cyber-corner bottom-right"></div>
+
+<!-- 发光粒子 -->
+<div class="glow-particle" style="left: 10%; animation-delay: 0s;"></div>
+<div class="glow-particle" style="left: 20%; animation-delay: 2s;"></div>
+<div class="glow-particle" style="left: 30%; animation-delay: 4s;"></div>
+<div class="glow-particle" style="left: 40%; animation-delay: 6s;"></div>
+<div class="glow-particle" style="left: 50%; animation-delay: 8s;"></div>
+<div class="glow-particle" style="left: 60%; animation-delay: 10s;"></div>
+<div class="glow-particle" style="left: 70%; animation-delay: 12s;"></div>
+<div class="glow-particle" style="left: 80%; animation-delay: 14s;"></div>
+
+<div class="cyber-container">
+    <!--头部-->
+    <h1 class="cyber-title">欢迎来到 SOUFFLE 的云</h1>
+
+    <div class="button-grid">
+        <!--博客-->
+        <a href="#" class="cyber-button">
+            博客
+        </a>
+        <!--云-->
+        <a href="https://www.souffle.cc:5001" class="cyber-button">
+            SouffleCloud
+        </a>
+        <!--在线书籍-->
+        <a href="https://www.souffle.cc:8083" class="cyber-button">
+            书籍管理
+        </a>
+        <!--在线影视-->
+        <a href="#" class="cyber-button">
+            在线影视
+        </a>
+    </div>
+    
+    <!-- 访客信息 -->
+    <div class="visitor-info">
+        <span>访客用户名：abc</span>
+        <span>访客密码：123456</span>
+    </div>
 
 </div>
 
-<!--<meta http-equiv="refresh" content="5;url=https://www.soufflecloud.top/wordpress/">-->
-<el-container>
-    <br>
-    <div style="align:center">
-        <el-main >
-    	<!--博客-->
-        <button type="button" style="font-size:40px;"  class="el-button el-button--primary"  onclick="window.location.href = '#'">
-            <span>博客</span>
-        </button>
-        <!--云-->
-        <button type="button" style="font-size:40px;"  class="el-button el-button--primary"  onclick="window.location.href = 'https://www.souffle.cc:5001'">
-            <span>SouffleCloud</span>
-        </button>
-        <!--在线书籍-->
-        <button type="button" style="font-size:40px;"  class="el-button el-button--primary"  onclick="window.location.href = 'https://www.souffle.cc:8083'">
-            <span>书籍管理</span>
-        </button>
-        <!--在线影视-->
-        <button type="button" style="font-size:40px;"  class="el-button el-button--primary"  onclick="window.location.href = '#'">
-            <span>在线影视</span>
-        </button>
-        <br>
-        <span>访客用户名:abc</span>
-        <br>
-        <span>访客密码:123456</span>
-
-    </el-main>
-    </div>
-
-</el-container>
-
-    <!-- 代码部分begin -->
+    <!-- 代码部分 begin -->
     <ul class="countdown">
         <li> <span class="days">00</span>
-            <p class="days_ref">days</p>
+            <p class="days_ref">DAYS</p>
         </li>
         <li class="seperator">天</li>
         <li> <span class="hours">00</span>
-            <p class="hours_ref">hours</p>
+            <p class="hours_ref">HOURS</p>
         </li>
         <li class="seperator">时</li>
         <li> <span class="minutes">00</span>
-            <p class="minutes_ref">minutes</p>
+            <p class="minutes_ref">MINUTES</p>
         </li>
         <li class="seperator">分</li>
         <li> <span class="seconds">00</span>
-            <p class="seconds_ref">seconds</p>
+            <p class="seconds_ref">SECONDS</p>
         </li>
         <li class="seperator">秒</li>
     </ul>
 
     <ul class="countdown">
-    <li class="seperator">距离2023年2月3日</li>
+    <li class="countdown-title">距离目标日期</li>
     </ul>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.downCount.js"></script>
@@ -99,7 +385,7 @@
             alert('倒计时结束!');
         });
     </script>
-    <!-- 代码部分end -->
+    <!-- 代码部分 end -->
 
 
 </body>
